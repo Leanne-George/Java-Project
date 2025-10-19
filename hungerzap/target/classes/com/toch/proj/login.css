@@ -1,0 +1,51 @@
+/* Gradient background */
+.root-bg {
+    -fx-background-color: linear-gradient(to bottom right,
+        #FFADAD, #FFD6A5, #FDFFB6, #D9EDF8, #DEDAF4);
+}
+
+/* Login card */
+.login-container {
+    -fx-background-color: #E4F1EE;
+    -fx-padding: 30;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 5);
+}
+
+/* Title */
+.app-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFADAD;
+}
+
+/* Tagline */
+.tagline {
+    -fx-font-size: 16px;
+    -fx-text-fill: #FFD6A5;
+}
+
+/* Input fields */
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-border-color: #D9EDF8;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 6 10;
+}
+
+/* Button */
+.login-btn {
+    -fx-background-color: #FFADAD;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 2);
+}
+
+.login-btn:hover {
+    -fx-background-color: #FFD6A5;
+    -fx-text-fill: #333;
+}
