@@ -1,51 +1,227 @@
-/* Gradient background */
+/* Palette:
+   #53B176 (green)
+   #C9C8CC (light gray)
+   #AF3833 (deep red)
+   #EBA889 (peach)
+   #9ED4DA (light blue)
+   #70998E (teal)
+*/
+
+/* Root: soft horizontal gradient with subtle texture feel */
 .root-bg {
-    -fx-background-color: linear-gradient(to bottom right,
-        #FFADAD, #FFD6A5, #FDFFB6, #D9EDF8, #DEDAF4);
-}
-
-/* Login card */
-.login-container {
-    -fx-background-color: #E4F1EE;
+    -fx-background-color:
+      linear-gradient(to bottom right,
+        rgba(158,212,218,0.16) 0%,
+        rgba(112,153,142,0.12) 40%,
+        rgba(201,200,204,0.06) 100%);
     -fx-padding: 30;
-    -fx-background-radius: 20;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 5);
 }
 
-/* Title */
+/* Floating card with slight blur/glass effect */
+.login-card {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(16,24,32,0.14), 18, 0, 0, 8);
+    -fx-padding: 28;
+    -fx-alignment: center;
+    -fx-border-color: rgba(112,153,142,0.12);
+    -fx-border-radius: 16;
+}
+
+/* Title styling: teal headline, bold and friendly */
 .app-title {
-    -fx-font-size: 28px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #FFADAD;
+    -fx-font-size: 38px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #70998E;      /* teal */
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-padding: 4 0 0 0;
 }
 
-/* Tagline */
+/* Tagline: light blue/peach accent */
 .tagline {
-    -fx-font-size: 16px;
-    -fx-text-fill: #FFD6A5;
+    -fx-font-size: 14px;
+    -fx-text-fill: #9ED4DA;      /* light blue */
+    -fx-font-weight: 600;
+    -fx-padding: 2 0 10 0;
 }
 
-/* Input fields */
-.text-field, .password-field {
-    -fx-background-color: white;
-    -fx-border-color: #D9EDF8;
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-    -fx-padding: 6 10;
+/* Field labels are subtle gray */
+.field-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b6b6b;
+    -fx-padding: 6 0 2 4;
 }
 
-/* Button */
-.login-btn {
-    -fx-background-color: #FFADAD;
+/* Inputs: roomy, rounded, with inner shadow */
+.input-field {
+    -fx-pref-width: 420px;
+    -fx-pref-height: 40px;
+    -fx-background-color: rgba(250,250,250,0.98);
+    -fx-border-color: transparent;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 0 12 0 14;
+    -fx-font-size: 14px;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.03), 4, 0.0, 0, 1);
+}
+
+/* Focused input: soft teal outline */
+.input-field:focused {
+    -fx-border-color: rgba(83,177,118,0.95); /* #53B176 */
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(83,177,118,0.08), 10, 0, 0, 3);
+}
+
+/* Primary button using green palette with subtle gradient */
+.primary-btn {
+    -fx-background-color: linear-gradient(#53B176, #3FA06A);
     -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
-    -fx-padding: 8 20;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+    -fx-padding: 10 28 10 28;
+    -fx-background-radius: 12;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 2);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 3);
+    -fx-border-color: transparent;
 }
 
-.login-btn:hover {
-    -fx-background-color: #FFD6A5;
+/* Primary hover / pressed */
+.primary-btn:hover {
+    -fx-background-color: linear-gradient(#6FC78E, #53B176);
+    -fx-translate-y: -1;
+}
+.primary-btn:pressed {
+    -fx-translate-y: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 3, 0, 0, 1);
+}
+
+/* Alternative subtle secondary button style (if needed) */
+.secondary-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #70998E;
+    -fx-border-color: rgba(112,153,142,0.12);
+    -fx-border-radius: 10;
+    -fx-padding: 8 18;
+}
+
+/* Message label styles */
+.message-label {
+    -fx-font-size: 13px;
+    -fx-padding: 8 0 0 0;
+}
+
+.message-error {
+    -fx-text-fill: #AF3833; /* deep red */
+    -fx-font-weight: 600;
+}
+
+.message-success {
+    -fx-text-fill: #53B176; /* green */
+    -fx-font-weight: 600;
+}
+
+/* Small helper: subtle divider lines if you want to separate sections */
+.divider {
+    -fx-background-color: linear-gradient(to right, rgba(201,200,204,0.0), rgba(201,200,204,0.45), rgba(201,200,204,0.0));
+    -fx-pref-height: 1;
+    -fx-max-width: 360px;
+    -fx-padding: 6 0 6 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 520px) {
+    .input-field { -fx-pref-width: 320px; }
+    .login-card { -fx-padding: 20; }
+}
+
+/* ---------- Dashboard specific styles ---------- */
+
+.dashboard-card {
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-background-radius: 12;
+    -fx-padding: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 4);
+    -fx-border-color: rgba(112,153,142,0.06);
+}
+
+.app-title-small {
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #70998E; /* teal */
+    -fx-padding: 4 0 6 0;
+}
+
+.balance-label {
+    -fx-font-size: 16px;
     -fx-text-fill: #333;
+    -fx-padding: 4 0 10 0;
+}
+
+.menu-table .table-view,
+.cart-table .table-view,
+.order-history-table .table-view {
+    -fx-border-color: rgba(112,153,142,0.08);
+}
+
+/* small primary button used in dashboard */
+.primary-btn-small {
+    -fx-background-color: linear-gradient(#53B176, #3FA06A);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 13px;
+    -fx-padding: 6 14;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+/* small secondary */
+.secondary-btn-small {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(112,153,142,0.14);
+    -fx-text-fill: #70998E;
+    -fx-border-radius: 8;
+    -fx-padding: 6 12;
+}
+
+/* cart total */
+.cart-total-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 8 0 6 0;
+}
+
+/* make tables and controls more airy */
+.table-view {
+    -fx-font-size: 13px;
+    -fx-focus-color: transparent;
+}
+
+/* responsive adjustments if needed */
+@media screen and (max-width: 900px) {
+    .input-field { -fx-pref-width: 280px; }
+    .dashboard-card { -fx-padding: 10; }
+}
+
+.welcome-label {
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #70998E;
+    -fx-padding: 2 0 10 0;
+}
+
+.dashboard-card {
+    -fx-background-color: rgba(255,255,255,0.94);
+    -fx-background-radius: 12;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 4);
+    -fx-border-color: rgba(112,153,142,0.06);
+}
+
+.primary-btn-small {
+    -fx-background-color: linear-gradient(#53B176, #3FA06A);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 13px;
+    -fx-padding: 8 18;
+    -fx-background-radius: 10;
 }
